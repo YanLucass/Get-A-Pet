@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+  /* Todos componentes terem exatamente a largura q definirmos */
+  box-sizing: border-box; 
+}
+
+:root {
+  --cor-destaque: #16479d;
+}
+
+h1 {
+  color: var(--cor-destaque);
+  margin-bottom: 1em;
+  font-size: 2.1em;
+}
+
+.bold {
+  font-weight: bold;
+  color: var(--cor-destaque);
+}
