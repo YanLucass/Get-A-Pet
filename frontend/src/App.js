@@ -15,7 +15,7 @@ import Register from './components/pages/auth/Register'
 import Message from './components/layouts/Message';
 import Profile from './components/pages/User/Profile';
 import MyPets from './components/Pet/MyPets';
-import AddPet from './components/Pet/AddPet';
+import AddPet from './components/form/PetForm';
 // context
 import { UserProvider } from './context/UserContext';
 

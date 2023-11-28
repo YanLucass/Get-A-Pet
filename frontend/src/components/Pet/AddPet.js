@@ -1,22 +1,31 @@
 import api from '../../utils/api'
-import { useState, useNavigate } from 'react'
-import { Link } from 'react-router-dom'
-import styles from './AddPet.module.css'
+  import { useState} from 'react'
+  import { Link } from 'react-router-dom'
+  import { useNavigate } from 'react-router-dom';
+  import styles from './AddPet.module.css'
 
-// Nossos hooks
-import useFlashMessage from '../../hooks/useFlashMessage' 
+  // Nossos hooks
+  import useFlashMessage from '../../hooks/useFlashMessage' 
+  import PetForm from '../form/PetForm'
 
-function AddPet() {
-  return (
-    <section className={styles.addpet_header}>
-     <div>
-        <h1>Cadastre um pet</h1>
-        <p>Depois ele ficará disponível para adoção</p>
-     </div>
+  function AddPet() {
 
-     <p>Formulário</p>
-    </section>
-  )
-}
+ 
+    const navigate = useNavigate();
 
-export default AddPet
+
+
+    return (
+      <section className={styles.addpet_header}>
+      <div>
+          <h1>Cadastre um pet</h1>
+          <p>Depois ele ficará disponível para adoção</p>
+      </div>
+      <PetForm  btnText="Cadastar Pet" />
+
+
+      </section>
+    )
+  }
+
+  export default AddPet
