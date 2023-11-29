@@ -217,21 +217,19 @@ class PetController {
 
         updatedData.color = color;
 
-      
-        if(images.length === 0) {
-            res.status(422).json({message: "A imagem é obrigatória"});
-            return;
-        }
+        //came an imagem? update!   
+        if(images.length > 0) {
+          
         // catch filenames to the array images
         updatedData.images = [];
         images.map(image => { updatedData.images.push(image.filename)});
-        
+        }
         //save edit
         await Pet.findByIdAndUpdate(id, updatedData);
         res.status(200).json({message: "Pet atualizado com sucesso!"});
         return;
     }
-
+    
     //ADD ADOPTER FOR THE EPT 
 
     static async schedule(req, res) {

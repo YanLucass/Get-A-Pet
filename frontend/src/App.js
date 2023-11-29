@@ -16,6 +16,7 @@ import Message from './components/layouts/Message';
 import Profile from './components/pages/User/Profile';
 import MyPets from './components/Pet/MyPets';
 import AddPet from './components/form/PetForm';
+import EditPet from './components/Pet/EditPet';
 // context
 import { UserProvider } from './context/UserContext';
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/user/profile" element={<Profile/>} />
         <Route path='/pet/MyPets' element={<MyPets />} />
         <Route path='/pet/add' element={<AddPet />} />
+        <Route path = '/pet/edit/:id' element={<EditPet/>} />
       </Routes>
       </Container>
       <Footer/>
