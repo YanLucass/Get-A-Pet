@@ -53,7 +53,7 @@ function MyPets() {
       {/* Cabeçalhos mypets */}
       <div className={styles.petlist_header}>
       
-        <h1> MyPets</h1>
+        <h1> Meus pets </h1>
         <Link to='/pet/add'>Cadastrar pet</Link>
       </div>
       

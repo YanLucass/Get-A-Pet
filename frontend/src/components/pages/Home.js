@@ -30,7 +30,6 @@ function Home() {
             <div className={styles.pet_card}>
                {/*div to background image  */}
                <div style={{backgroundImage: `url(${process.env.REACT_APP_API}/images/pets/${pet.images[0]})`}} className={styles.pet_card_image}> </div>
-              <p>Imagem do pet</p>
               <h3>{pet.name}</h3>
               <p>
                 <span className="bold">Peso:</span> {pet.weight}kg

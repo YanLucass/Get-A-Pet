@@ -17,6 +17,8 @@ import Profile from './components/pages/User/Profile';
 import MyPets from './components/Pet/MyPets';
 import AddPet from './components/form/PetForm';
 import EditPet from './components/Pet/EditPet';
+import PetDetails from './components/Pet/PetDetails';
+import MyAdoptions from './components/Pet/MyAdoptions';
 // context
 import { UserProvider } from './context/UserContext';
 
@@ -36,6 +38,9 @@ function App() {
         <Route path='/pet/MyPets' element={<MyPets />} />
         <Route path='/pet/add' element={<AddPet />} />
         <Route path = '/pet/edit/:id' element={<EditPet/>} />
+        <Route path='/pet/MyAdoptions' element={<MyAdoptions / >} />
+        <Route path='/pet/:id' element={<PetDetails/>} />
+        
       </Routes>
       </Container>
       <Footer/>

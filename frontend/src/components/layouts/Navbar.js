@@ -13,7 +13,7 @@ function Navbar() {
         <nav className={styles.navbar}>
             <div className={styles.navbar_logo}>
                 <img src={Logo} alt="Get A Pet"></img>
-                <h2>Get A Pet</h2>
+                <h2><Link to='/'>GetAPet</Link></h2>
             </div> 
             <ul>
                 <li>
@@ -27,6 +27,10 @@ function Navbar() {
                         </li>
                         <li>
                             <Link to="/pet/mypets">Meus pets</Link>
+                        </li>
+
+                        <li>
+                            <Link to='/pet/MyAdoptions'>Minhas adoções</Link>
                         </li>
                         <li onClick={logout}>Sair</li>
                     </>
