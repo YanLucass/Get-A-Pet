@@ -18,21 +18,30 @@ function Home() {
   return (
     <section>
       {/* header */}
-      <div>
+      <div className={styles.pet_home_header}>
         <h1>Adote um pet</h1>
         <p>Veja os detalhes de cada um e conheça o tutor deles</p>
       </div>
       {/* pets */}
-      <div>
+      <div className={styles.pet_container}>
         {pets.length > 0 && (
           // show pets with map
           pets.map((pet) => (
-            <div> 
+            <div className={styles.pet_card}>
+               {/*div to background image  */}
+               <div style={{backgroundImage: `url(${process.env.REACT_APP_API}/images/pets/${pet.images[0]})`}} className={styles.pet_card_image}> </div>
               <p>Imagem do pet</p>
               <h3>{pet.name}</h3>
               <p>
-                <span className="bold"></span>
+                <span className="bold">Peso:</span> {pet.weight}kg
               </p>
+                  {/* pets available? */}
+                    {pet.available ?  (<Link to={`/pet/${pet._id}`}>Mais detalhes</Link>) 
+              
+                  : (
+                    <p className={styles.adopted_text}>Adotado</p>
+                )}
+
             </div>
           ))
         )}

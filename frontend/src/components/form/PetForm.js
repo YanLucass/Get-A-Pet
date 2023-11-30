@@ -63,12 +63,14 @@ function PetForm({handleSubmit, petData, btnText}) {
         msgType = 'error'
         return err.response.data; //mandando messaage de erro para data
  })
-    setFlashMessage(data.message, msgType)
-    navigate('/pets/mypets');
+        setFlashMessage(data.message, msgType)
+        if(msgType !== 'error') {
+            navigate('/pets/mypets');
+         } 
 
     }
 
-      //update pet
+    //update pet
     async function updatePet(pet) {
         
         let msgType = 'sucess'
