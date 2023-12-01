@@ -48,7 +48,9 @@ function PetDetails() {
                 <section className={styles.pet_details_container}>
                     <div className={styles.pet_details_header}>
                         <h1>Conhecendo o Pet: {pet.name} </h1>
-                        <p>Se tiver interesse, marque uma visita para conhecê-lo</p>
+                        <p><strong>Descrição do pet: </strong> {pet.description}</p>
+                        <p>Se tiver interesse, marque uma visita para conhecê-lo.</p>
+
                     </div>
                     {/* images div */}
                     <div className={styles.pet_images}>

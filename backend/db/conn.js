@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 async function main() {
     await mongoose.connect('mongodb://localhost:27017/getapet');
-    mongoose.set('strictQuery', true);
+    mongoose.set('strictQuery', false);
     console.log('Conectado ao MongoDB com Mongoose');
 }
 

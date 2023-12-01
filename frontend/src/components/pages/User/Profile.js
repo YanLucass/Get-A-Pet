@@ -70,10 +70,10 @@ function Profile() {
     setFlashMessage(data.message, msgType)
   }
 
+  //to define user photo
   return (
     <section>
       <div className={styles.profile_header}>
-      <p>{`${process.env.REACT_APP_API}/images/users/${user.image}`}</p>
         <h1>Perfil</h1>
         {(user.image || preview) && (
           <RoundImage
@@ -87,6 +87,8 @@ function Profile() {
         )}
       </div>
       <form onSubmit={handleSubmit} className={formStyles.form_container}>
+
+
         <Input
           text="Imagem"
           type="file"

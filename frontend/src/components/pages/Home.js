@@ -5,6 +5,7 @@ import styles from './Home.module.css'
 
 function Home() {
   const [pets, setPets] = useState([]);
+  
 
   //get all pets
   useEffect( () => {
@@ -22,6 +23,7 @@ function Home() {
         <h1>Adote um pet</h1>
         <p>Veja os detalhes de cada um e conheça o tutor deles</p>
       </div>
+
       {/* pets */}
       <div className={styles.pet_container}>
         {pets.length > 0 && (

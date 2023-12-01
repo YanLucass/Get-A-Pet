@@ -9,7 +9,7 @@ class PetController {
     static async createPet(req, res) {
 
         //CREATE A PET
-        const { name, age, weight, color } = req.body;
+        const { name, age, weight, color, description } = req.body;
         const images = req.files;
         const available = true; //available for adoption.
 
@@ -38,33 +38,32 @@ class PetController {
             res.status(422).json({message: "A imagem é obrigatória!"});
             return;
         }
-        console.log(images);
 
         //get pet owner
         const token = getToken(req);
         const user = await getUserByToken(token);
 
         //create a pet
-        
         const pet = new Pet({
-            name, age, weight, color, available,
+            name, age, weight, color, available, description,
             images: [],
             user: {
                 _id: user._id,
                 name: user.name,
                 image: user.image,
-                phone: user.phone,
-            },
+                phone: user.phone
+            }
+            
         });
-       
-        //Vamos receber um array de objetos com dados da imagem, limpamos e jogamos no array images[] so o name img.
-        images.map(image => { pet.images.push( image.filename )});
 
+        //fill images
+        images.map((image) => { pet.images.push(image.filename)});
+        
         try {
-            const newPet = await pet.save();
-            res.status(201).json({message: 'Pet cadastrado com sucesso!', newPet});
-        } catch (err) {
-            res.status(500).json({message: 'Deu erro' + err});
+            await pet.save();
+            res.status(201).json({message: "Pet cadastrado com sucesso!"});
+        } catch {
+            res.status(500).json({message: "Deu erro:", err});
         }
 
     }

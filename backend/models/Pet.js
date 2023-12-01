@@ -29,6 +29,10 @@ const Pet = mongoose.model(
                 type: Boolean //adotado aou nao
             },
 
+            description: {
+                type: String
+            },
+
             user: Object, //colocarmos aq pq vms precisar do nome, telefone 
             adopter: Object // teremosinformaçoes de quem adotou
 

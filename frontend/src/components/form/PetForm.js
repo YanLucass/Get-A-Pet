@@ -15,12 +15,9 @@ function PetForm({handleSubmit, petData, btnText}) {
     const [token] = useState(localStorage.getItem('token') || '');
     const { setFlashMessage } = useFlashMessage()
     const navigate = useNavigate();
-    console.log(petData);
-   
 
+    //Onfile change
     function onFileChange(e) {
-        console.log(e.target);
-        console.log(e.target.files);
         setPreview(Array.from(e.target.files)) //transformando em array o fileList
         setPet({...pet, images: [...e.target.files]});
     }
@@ -171,6 +168,16 @@ function PetForm({handleSubmit, petData, btnText}) {
                 value={pet.weight || ''}
             />
 
+            <Input 
+                text="Descrição"
+                type="textarea"
+                name="description"
+                placeholder="Hey! Forneça uma descrição para seu pet :)"
+                handleOnChange={handleChange}
+                value={pet.description || ''} 
+            />
+
+            
             <Select
                 name="color"
                 text="Selecione a cor"
