@@ -38,8 +38,8 @@ function App() {
         <Route path='/pet/MyPets' element={<MyPets />} />
         <Route path='/pet/add' element={<AddPet />} />
         <Route path = '/pet/edit/:id' element={<EditPet/>} />
-        <Route path='/pet/MyAdoptions' element={<MyAdoptions / >} />
         <Route path='/pet/:id' element={<PetDetails/>} />
+        <Route path='/pet/MyAdoptions' element={<MyAdoptions/>} />
         
       </Routes>
       </Container>

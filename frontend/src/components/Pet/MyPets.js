@@ -27,7 +27,7 @@ function MyPets() {
     });
   }, [token]);
 
-
+  //remove pet
   async function removePet(id) {
     let msgType = 'sucess'
     const data = await api.delete(`/pets/${id}`, {
@@ -44,6 +44,25 @@ function MyPets() {
       msgType = 'error'
       return err.response.data;
     })
+
+    setFlashMessage(data.message, msgType);
+  }
+
+  //conclude adoption
+  async function concludeAdoption(id) {
+    let msgType = 'sucess'
+    const data = await api.patch(`/pets/conclude/${id}`, {
+        headers: {
+           Authorization: `Bearer ${JSON.parse(token)}`
+        }
+    })
+    .then(response => {
+        return response.data;
+    })
+    .catch(error => {
+        msgType = 'error';
+        return error.response.data;
+    });
 
     setFlashMessage(data.message, msgType);
   }
@@ -74,7 +93,9 @@ function MyPets() {
                     <>
                       {/* Verificar se já tem um adotante */}
                       {pet.adopter && (
-                        <button className={styles.conclude_btn}>Concluir adoção</button>
+                        <button className={styles.conclude_btn} onClick={() => {
+                          concludeAdoption(pet._id);
+                        }}>Concluir adoção</button>
                       )}
                       <Link to={`/pet/edit/${pet._id}`}>Editar</Link>
                       <button onClick={() => {

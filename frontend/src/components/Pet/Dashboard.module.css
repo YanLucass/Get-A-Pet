@@ -85,3 +85,13 @@
     color: #fff;
     background-color: #25b456;
 }
+
+/* my adoptions */
+.contacts {
+    margin-left: 2em;
+
+}
+
+.contacts p {
+    margin-bottom: 0.5em;
+}
