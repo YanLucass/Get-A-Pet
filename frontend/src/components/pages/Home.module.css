@@ -6,6 +6,28 @@
     margin-bottom: 0.3em;
 }
 
+.searchContainer {
+    display: flex;
+    align-items: center;
+    border: 2px solid  #25b456;
+    border-radius: 5px;
+    padding: 5px;
+    width: fit-content;
+  }
+
+  .searchContainer input {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .searchIcon {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
 .pet_container {
     display: flex;
     /* começar pela esquerda */
